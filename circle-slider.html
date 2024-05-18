@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circular Slider</title>
+</head>
+
+<style>
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.circle-container {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.circle {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 7px solid #9B3467;
+    background-color: #fff;
+}
+
+.slider {
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    background: #ffffff;
+    border: 7px solid #808181;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#description {
+    position: absolute;
+    width: 60%;
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.slider:nth-child(1) { transform: rotate(0deg) translate(280px) rotate(0deg); }
+.slider:nth-child(2) { transform: rotate(36deg) translate(220px) rotate(-36deg); }
+.slider:nth-child(3) { transform: rotate(72deg) translate(220px) rotate(-72deg); }
+.slider:nth-child(4) { transform: rotate(108deg) translate(280px) rotate(-108deg); }
+.slider:nth-child(5) { transform: rotate(144deg) translate(220px) rotate(-144deg); }
+.slider:nth-child(6) { transform: rotate(180deg) translate(280px) rotate(-180deg); }
+.slider:nth-child(7) { transform: rotate(216deg) translate(220px) rotate(-216deg); }
+.slider:nth-child(8) { transform: rotate(252deg) translate(220px) rotate(-252deg); }
+.slider:nth-child(9) { transform: rotate(288deg) translate(280px) rotate(-288deg); }
+.slider:nth-child(10) { transform: rotate(324deg) translate(220px) rotate(-324deg); }
+
+/* CSS for lines */
+.line {
+    position: absolute;
+    width: 7px;
+    background-color:  #808181;
+    transform-origin: top;
+    height: 100px;
+}
+
+.line:nth-child(1) { transform: rotate(-18deg) translateY(150px); z-index: -1; }
+.line:nth-child(2) { transform: rotate(19deg) translateY(150px); z-index: -1; }
+.line:nth-child(3) { transform: rotate(54deg) translateY(150px); z-index: -1; }
+.line:nth-child(4) { transform: rotate(126deg) translateY(150px); z-index: -1; }
+.line:nth-child(5) { transform: rotate(161deg) translateY(150px); z-index: -1; }
+.line:nth-child(6) { transform: rotate(234deg) translateY(150px); z-index: -1; }
+.line:nth-child(7) { transform: rotate(198deg) translateY(150px); z-index: -1; }
+.line:nth-child(8) { transform: rotate(270deg) translateY(150px); z-index: -1; }
+.line:nth-child(9) { transform: rotate(306deg) translateY(150px); z-index: -1; }
+.line:nth-child(10) { transform: rotate(90deg) translateY(150px); z-index: -1; }
+
+</style>
+<body>
+    <div class="circle-container">
+        <div class="circle">
+            <div class="slider" data-description="Description 1">بهره وری</div>
+            <div class="slider" data-description="Description 2">منابع انسانی</div>
+            <div class="slider" data-description="Description 3">مالی</div>
+            <div class="slider" data-description="Description 4">خدمات</div>
+            <div class="slider" data-description="Description 5">    وب‌سایت    </div>
+            <div class="slider" data-description="Description 6">انبار</div>
+            <div class="slider" data-description="Description 7">سلامت و درمان</div>
+            <div class="slider" data-description="Description 8">  بازاریابی</div>
+            <div class="slider" data-description="Description 9">  مدیریت</div>
+            <div class="slider" data-description="Description 10">   فروش</div>
+            <div id="description">our brand</div>
+                    <!-- Lines -->
+        <div class="">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        </div>
+
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const sliders = document.querySelectorAll('.slider');
+            const description = document.getElementById('description');
+
+            sliders.forEach(slider => {
+                slider.addEventListener('click', function() {
+                    const desc = this.getAttribute('data-description');
+                    description.textContent = desc;
+                });
+            });
+        });
+    </script>
+</body>
+</html>
