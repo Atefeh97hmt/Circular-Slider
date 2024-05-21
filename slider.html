@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinite Image Slider</title>
+
+</head>
+<body>
+
+<style>
+    * {
+  padding: 0px;
+  margin: 0px;
+}
+body {
+  background: #222224;
+  color: #808082;
+  margin: 3px;
+}
+h5 {
+  color: white;
+}
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  height: auto;
+  overflow: hidden;
+}
+
+.slider {
+  overflow: hidden;
+  width: 100%;
+  padding: 3px 3px;
+  display: flex;
+  justify-content: flex-start; 
+}
+.slider-container {
+  display: flex;
+  height: 100%;
+  width: 400%;
+  flex-shrink: 0;
+  align-content: space-between;
+  transition: all 0.5s;
+}
+.slider:nth-child(1),
+.slider:nth-child(2),
+.slider:nth-child(3) {
+  border-right: 2px solid #4b4b4d;
+}
+
+.slide {
+  flex-basis: 25%;
+  flex-shrink: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3px;
+}
+
+.slider-content__holder {
+  flex-grow: 1;
+  flex-basis: 50%;
+}
+
+.slider-content__holder .content-holder__title {
+  font-size: 14px;
+}
+
+.slider-content__holder .content-holder__score {
+  font-size: 22px;
+  text-align: right;
+}
+
+.slider-content__holder .content-holder__percentage {
+  font-size: 14px;
+  text-align: right;
+}
+
+.slider-content__holder .content-holder__percentage span {
+  font-size: 10px;
+}
+
+.green {
+  color: #2a914e;
+}
+
+.red {
+  color: #eb372b;
+}
+
+</style>
+
+    <div class="container">
+        <div class="slider" id="slider-one">
+          <div class="slider-container">
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">Total Discounted orders</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage green">
+                  <span>&#9650;</span> 3% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">New user detention</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage red">
+                  <span>&#9660;</span> 7% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">Total Discounted orders</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage green">
+                  <span>&#9650;</span> 3% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">New user detention</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage red">
+                  <span>&#9660;</span> 7% wow
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider" id="slider-two">
+          <div class="slider-container">
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">New user detention</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage red">
+                  <span>&#9660;</span> 7% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">Total Discounted orders</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage green">
+                  <span>&#9650;</span> 3% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">New user detention</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage red">
+                  <span>&#9660;</span> 7% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">Total Discounted orders</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage green">
+                  <span>&#9650;</span> 3% wow
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider" id="slider-three">
+          <div class="slider-container">
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">Total Discounted orders</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage green">
+                  <span>&#9650;</span> 3% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">New user detention</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage red">
+                  <span>&#9660;</span> 7% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">Total Discounted orders</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage green">
+                  <span>&#9650;</span> 3% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">New user detention</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage red">
+                  <span>&#9660;</span> 7% wow
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="slider" id="slider-four">
+          <div class="slider-container">
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">New user detention</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage red">
+                  <span>&#9660;</span> 7% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">Total Discounted orders</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage green">
+                  <span>&#9650;</span> 3% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">New user detention</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage red">
+                  <span>&#9660;</span> 7% wow
+                </p>
+              </div>
+            </div>
+            <div class="slide">
+              <div class="slider-content__holder" data-position="left">
+                <p class="content-holder__title">Total Discounted orders</p>
+              </div>
+              <div class="slider-content__holder" data-position="right">
+                <h5 class="content-holder__score">2.7K</h5>
+                <p class="content-holder__percentage green">
+                  <span>&#9650;</span> 3% wow
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+<script>
+
+
+function initializeSlider(selector, interval = 2000, transitionDuration = 3) {
+  const slider = document.getElementById(selector);
+  const sliderWrapper = slider.querySelector(".slider-container");
+  let direction;
+  
+  sliderWrapper.addEventListener(
+    "transitionend",
+    function() {
+      sliderWrapper.appendChild(sliderWrapper.firstElementChild);
+      sliderWrapper.style.transition = "none";
+      sliderWrapper.style.transform = "translate(0)";
+      setTimeout(() => {
+        sliderWrapper.style.transition = `all ${transitionDuration}s`;
+      });
+    }
+  );
+  
+  // Runs The slider in cyclic manner
+  setInterval(() => {
+    direction = -1;
+    slider.style.justifyContent = "flex-start";
+    sliderWrapper.style.transform = "translate(-25%)"; // moves the slides
+  }, interval);
+}
+
+initializeSlider("slider-one");
+initializeSlider("slider-two");
+initializeSlider("slider-three");
+initializeSlider("slider-four");
+
+</script>
+
+</body>
+</html>
