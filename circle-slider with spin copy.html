@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circular Slider</title>
- 
+
 </head>
 
 <body>
@@ -15,19 +15,6 @@
             padding: 300px;
         }
 
-
-/* 
-
-        .x{
-color:
-#714B67
-#8F8F8F 
-#017E84 
-#E46E78
-#21B799
-#5B899E
-#E4A900
-        } */
         .circle-container {
             position: relative;
             width: 330px;
@@ -44,6 +31,7 @@ color:
             align-items: center;
             border: 25px solid #808181;
             background-color: #D9D9D9;
+
         }
 
         .sliders-container {
@@ -77,7 +65,6 @@ color:
             position: absolute;
             width: 100px;
             height: 100px;
-            background: #ffffff;
             border: 2px solid #9B3467;
             border-radius: 50%;
             cursor: pointer;
@@ -85,7 +72,39 @@ color:
             justify-content: center;
             align-items: center;
             text-align: center;
+            background-color: #ffffff;
+        }
 
+        #descriptionContainer h2 {
+            text-align: right;
+            color: #9b3467;
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+
+        #descriptionContainer ul {
+            direction: rtl;
+            padding: 0 25px;
+            line-height: 35px;
+            list-style: none;
+            direction: rtl;
+        }
+
+        #descriptionContainer li {
+            position: relative;
+            font-size: 17px;
+            margin: 10px;
+            text-align: right;
+        }
+
+        #descriptionContainer ul li::before {
+            content: "\2022";
+            color: #9b3467;
+            position: absolute;
+            font-size: 50px;
+            right: -30px;
+            top: 0px;
         }
 
         #brand-img {
@@ -93,18 +112,31 @@ color:
             display: flex;
             justify-content: center;
             align-items: center;
-            width: 100%;
-            height: 100%;
+            width: 190px;
+            height: 190px;
             background-color: #F2F2F2;
             border-radius: 50%;
-
-
+            position: absolute;
+            left: -44%;
+            top: -40px;
         }
 
         .flexxx {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
+        }
+
+        @media only screen and (max-width: 650px) {
+            .flexxx {
+                justify-content: center;
+            }
+
+            .circle {
+                width: 0;
+                height: 0;
+            }
         }
 
         .slider span {
@@ -115,7 +147,7 @@ color:
             height: 100%;
             align-items: center;
             justify-content: center;
-        font-size: 20px;
+            font-size: 20px;
         }
 
         .selected {
@@ -164,18 +196,41 @@ color:
         }
     </style>
     <div class="flexxx">
+
+        <div>
+            <div id="descriptionContainer"></div>
+        </div>
         <div class="circle-container">
             <div class="circle">
                 <div class="sliders-container">
                     <div class="slider">
                         <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><path d="M40.682 41.263c-3.514 4.188-9.758 4.734-13.946 1.22-4.189-3.514-4.735-9.758-1.22-13.947 3.514-4.188 9.758-4.734 13.946-1.22 4.188 3.515 4.734 9.759 1.22 13.947Z" fill="#1AD3BB"/><path d="M25.383 21.464c-3.514 4.188-9.758 4.734-13.946 1.22-4.188-3.514-4.735-9.758-1.22-13.946 3.514-4.189 9.758-4.735 13.946-1.22 4.188 3.514 4.734 9.758 1.22 13.946Z" fill="#FBB945"/><path d="M37.09 6.545c1.407-1.406 3.36-1.732 4.364-.728L46 10.363l-33.09 33.09c-1.407 1.406-3.36 1.732-4.365.728L4 39.636 37.09 6.544Z" fill="#985184"/><path d="m31.174 25.188-7.79 7.789a9.853 9.853 0 0 1 2.13-4.442 9.858 9.858 0 0 1 5.66-3.348Z" fill="#005E7A"/><path d="M18.676 24.962a9.868 9.868 0 0 0 6.707-3.498 9.854 9.854 0 0 0 2.278-5.487l-8.985 8.985Z" fill="#953B24"/></svg>
-                            بهره وری
-                        </span>
-                        
-                                            <div class="description" style="display:none;">
-                            <h2>Title 1</h2>
-                            <p>Description 1</p>
+                            بهره‌وری </span>
+
+                        <div class="description" style="display:none;">
+                            <h2>بهره‌وری</h2>
+                            <ul>
+                                <li>بحث</li>
+                                <li> اینترنت اشیاء IoT
+
+                                </li>
+                                <li> مجوزها
+
+                                </li>
+                                <li> تلفن اینترنتی VoIP
+
+                                </li>
+                                <li> اطلاعات
+                                </li>
+                                <li> واتس‌اَپ
+
+                                </li>
+                            </ul>
+
+
+
+
+
                         </div>
                     </div>
 
@@ -183,13 +238,27 @@ color:
 
                     <div class="slider">
 
-<span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><path d="M34 17a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" fill="#985184"/><path d="M12 24a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" fill="#FBB945"/><path d="M46 24a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" fill="#1AD3BB"/><path d="M25 30H4a4 4 0 0 0-4 4v4a4 4 0 0 0 4 4h21V30Z" fill="#FBB945"/><path d="M46 30H25v12h21a4 4 0 0 0 4-4v-4a4 4 0 0 0-4-4Z" fill="#1AD3BB"/><path d="M12 30h14c6.627 0 12 5.373 12 12H24c-6.627 0-12-5.373-12-12Z" fill="#985184"/></svg>
-    منابع انسانی
-</span>
+                        <span>
+                            منابع انسانی
+                        </span>
                         <div class="description" style="display:none;">
-                            <h2>Title 1</h2>
-                            <p>Description 1</p>
+                            <h2> منابع انسانی</h2>
+
+                            <ul>
+                                <li>کارمندان</li>
+                                <li>استخدام
+                                </li>
+                                <li>مرخصی
+                                </li>
+                                <li> سنجش و ارزیابی
+                                </li>
+                                <li> معرفی‌ها
+                                </li>
+                                <li> ناوگان
+                                </li>
+                            </ul>
+
+
                         </div>
                     </div>
 
@@ -197,38 +266,27 @@ color:
                     <div class="slider">
                         <span>
 
-                            <svg fill="#000000" height="50px" width="50px" version="1.0" id="Layer_1"
-                                xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                                viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-                                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-                                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-                                <g id="SVGRepo_iconCarrier">
-                                    <g>
-                                        <path
-                                            d="M11.5,14c-0.3,0-0.5-0.2-0.5-0.5s0.2-0.5,0.5-0.5h1c0.3,0,0.5-0.2,0.5-0.5S12.8,12,12.5,12H12v-0.5c0-0.3-0.2-0.5-0.5-0.5 S11,11.2,11,11.5v0.6c-0.6,0.2-1,0.8-1,1.4c0,0.8,0.7,1.5,1.5,1.5c0.3,0,0.5,0.2,0.5,0.5S11.8,16,11.5,16h-1 c-0.3,0-0.5,0.2-0.5,0.5s0.2,0.5,0.5,0.5H11v0.5c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5v-0.6c0.6-0.2,1-0.8,1-1.4 C13,14.7,12.3,14,11.5,14z">
-                                        </path>
-                                        <path
-                                            d="M21,18c-0.8,0-1.6,0.4-2.2,0.9l-2.5-1.7c0.4-0.8,0.7-1.7,0.7-2.7c0-0.6-0.1-1.2-0.3-1.8l1.8-0.8c0.5,0.6,1.2,1.1,2,1.1 c1.4,0,2.5-1.1,2.5-2.5S21.9,8,20.5,8c-0.1,0-0.3,0-0.4,0l-0.6-1.4C19.8,6.3,20,5.9,20,5.5C20,4.7,19.3,4,18.5,4S17,4.7,17,5.5 S17.7,7,18.5,7c0,0,0.1,0,0.1,0l0.6,1.4C18.5,8.9,18,9.6,18,10.5c0,0.2,0,0.4,0.1,0.5l-1.8,0.8C15.4,10.1,13.6,9,11.5,9 C10,9,8.7,9.6,7.7,10.5L6.4,9.4C6.8,8.9,7,8.2,7,7.5c0-0.6-0.2-1.1-0.4-1.6l2.2-1.6C9.2,4.7,9.8,5,10.5,5c1.3,0,2.4-1.1,2.5-2.4 l2.2-0.4C15.4,2.7,15.9,3,16.5,3C17.3,3,18,2.3,18,1.5S17.3,0,16.5,0c-0.7,0-1.3,0.5-1.5,1.2l-2.2,0.4C12.5,0.7,11.6,0,10.5,0 C9.1,0,8,1.1,8,2.5c0,0.4,0.1,0.7,0.2,1L6,5.1C5.4,4.4,4.5,4,3.5,4C1.6,4,0,5.6,0,7.5S1.6,11,3.5,11c0.9,0,1.7-0.3,2.3-0.9l1.3,1.1 c-0.7,0.9-1.1,2-1.1,3.2c0,1.1,0.3,2,0.8,2.9l-1.7,1.3c-0.4-0.4-1-0.6-1.7-0.6C2.1,18,1,19.1,1,20.5S2.1,23,3.5,23S6,21.9,6,20.5 c0-0.4-0.1-0.7-0.2-1.1l1.7-1.3c1,1.1,2.5,1.8,4.1,1.8c1.7,0,3.2-0.8,4.2-2l2.5,1.7C18.1,20.1,18,20.6,18,21c0,1.7,1.3,3,3,3 s3-1.3,3-3S22.7,18,21,18z M18,5.5C18,5.2,18.2,5,18.5,5S19,5.2,19,5.5S18.8,6,18.5,6S18,5.8,18,5.5z M20.5,9 c0.8,0,1.5,0.7,1.5,1.5S21.3,12,20.5,12S19,11.3,19,10.5S19.7,9,20.5,9z M16.5,1C16.8,1,17,1.2,17,1.5S16.8,2,16.5,2S16,1.8,16,1.5 S16.2,1,16.5,1z M10.5,1C11.3,1,12,1.7,12,2.5S11.3,4,10.5,4S9,3.3,9,2.5S9.7,1,10.5,1z M3.5,22C2.7,22,2,21.3,2,20.5 S2.7,19,3.5,19S5,19.7,5,20.5S4.3,22,3.5,22z M3.5,10C2.1,10,1,8.9,1,7.5S2.1,5,3.5,5S6,6.1,6,7.5S4.9,10,3.5,10z M11.5,19 C9,19,7,17,7,14.5S9,10,11.5,10s4.5,2,4.5,4.5S14,19,11.5,19z M21,23c-1.1,0-2-0.9-2-2s0.9-2,2-2s2,0.9,2,2S22.1,23,21,23z">
-                                        </path>
-                                    </g>
-                                </g>
-                            </svg>
-مالی
+                            امور مالی
 
 
 
                         </span>
-                        
+
                         <div class="description" style="display:none;">
-                            <h2>Finance </h2>
+                            <h2> امور مالی
+                            </h2>
+
                             <ul>
-                                <li></li>
-                                <li>Accounting</li>
-                                <li>Invoicing</li>
-                                <li>Expenses</li>
-                                <li>Spreadsheet (BI)</li>
-                                <li>Documents</li>
-                                <li>Sign</li>
+                                <li>حسابداری</li>
+                                <li>صدور فاکتور
+                                </li>
+                                <li>هزینه‌ها
+                                </li>
+                                <li>صفحه گسترده (هوش تجاری)
+                                </li>
+                                <li>اسناد</li>
+                                <li>امضای اسناد
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -238,8 +296,36 @@ color:
                     <div class="slider">
                         <span>خدمات</span>
                         <div class="description" style="display:none;">
-                            <h2>Title 1</h2>
-                            <p>Description 1</p>
+
+
+                            <h2> خدمات
+                            </h2>
+
+                            <ul>
+                                <li> مدیر پروژه
+
+
+                                </li>
+                                <li> برگه ساعت کارکرد
+
+                                </li>
+                                <li> خدمت در محل
+
+
+                                </li>
+                                <li> مرکز پشتیبانی
+
+
+                                </li>
+                                <li> برنامه‌ریزی
+
+                                </li>
+                                <li> قرار ملاقات
+
+                                </li>
+                            </ul>
+
+
                         </div>
                     </div>
 
@@ -247,26 +333,62 @@ color:
 
                     <div class="slider">
                         <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><g clip-path="url(#o_icon_website__a)"><path d="M26.001 34.5s-.83-2-.997-2.167c20.502-9.84 23.518-3.54 23.94-.955.068.418.005.843-.124 1.247A24.857 24.857 0 0 1 47 36.89c-1.5 1.5-10 1.61-10 1.61l-11-4Z" fill="#144496"/><path d="m21 14 4.004 3.667c-20.502 9.84-23.518 3.54-23.94.955-.068-.418-.005-.843.124-1.247a24.84 24.84 0 0 1 1.428-3.514C6.713 5.644 14.501 11 14.501 11l6.5 3Z" fill="#1A6F66"/><path d="M1.187 32.625c-.129-.404-.192-.829-.124-1.247.422-2.586 3.438-8.886 23.94.955 14.197 6.815 20.01 5.89 22.382 3.818C43.286 44.36 34.803 50 25.003 50 13.855 50 4.411 42.703 1.187 32.625Z" fill="#2EBCFA"/><path d="M48.819 17.375c.129.404.192.829.124 1.247-.422 2.586-3.438 8.886-23.94-.955-14.197-6.815-20.01-5.89-22.382-3.818C6.72 5.64 15.203 0 25.003 0 36.15 0 45.594 7.297 48.819 17.375Z" fill="#1AD3BB"/></g><defs><clipPath id="o_icon_website__a"><path fill="#fff" d="M0 0h50v50H0z"/></clipPath></defs></svg>
 
-                            وبسایت
+                            وبسایت‌ها
 
                         </span>
                         <div class="description" style="display:none;">
-                            <h2>Title 1</h2>
-                            <p>Description 1</p>
+                            <h2> وبسایت‌ها
+                            </h2>
+                            <ul>
+                                <li> ساخت وبسایت
+                                </li>
+                                <li> تجارت الکترونیک
+                                </li>
+                                <li>وبلاگ
+                                </li>
+                                <li> پرسش و پاسخ
+                                </li>
+                                <li> گفت‌وگوی آنلاین</li>
+                                <li> آموزش مجازی
+                                </li>
+                            </ul>
+
+
+
+
+
+
                         </div>
                     </div>
 
                     <div class="slider">
 
-<span>
-    <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><path d="m25 4 6.857 4L15.5 19v16l.5 5.75-9-5.25v-21L25 4Z" fill="#FBB945"/><path d="m18.087 41.967-6.138-3.58V17.5L30.046 6.943l6.283 3.665L22.001 23.5l-3.915 18.467Z" fill="#F86126"/><path d="M36.328 10.61 43 14.5v21L25 46l-6.914-4.032V21.25l18.242-10.642Z" fill="#985184"/></svg>
-    انبارداری
-</span>
+                        <span>
+                            انبار و تولید
+                        </span>
                         <div class="description" style="display:none;">
-                            <h2>Title 1</h2>
-                            <p>Description 1</p>
+                            <h2> انبار و تولید
+
+                            </h2>
+                            <ul>
+                                <li> انبار
+                                </li>
+                                <li> تولید MRP
+
+                                </li>
+                                <li> مدیریت چرخه عمر محصول PLM
+
+                                </li>
+                                <li>خرید
+                                </li>
+                                <li>تعمیر و نگهداری
+                                </li>
+                                <li>کنترل کیفیت
+                                </li>
+                            </ul>
+
+
                         </div>
                     </div>
 
@@ -274,37 +396,106 @@ color:
                     <div class="slider">
                         <span>سلامت و درمان</span>
                         <div class="description" style="display:none;">
-                            <h2>Title 1</h2>
-                            <p>Description 1</p>
+                            <h2> سلامت و درمان
+
+                            </h2>
+                            <ul>
+                                <li> برنامه ورزشی
+                                </li>
+                                <li> برنامه غذایی
+
+                                </li>
+                                <li> آنالیز بدن
+
+                                </li>
+                                <li>صفحه گسترده (هوش تجاری)
+                                </li>
+                                <li> مشاوره ورزشی و پزشکی
+                                </li>
+
+                            </ul>
                         </div>
                     </div>
 
                     <div class="slider">
                         <span>بازاریابی</span>
                         <div class="description" style="display:none;">
-                            <h2>Title sssssssssssss</h2>
-                            <p>Description 1</p>
+                            <h2> بازاریابی
+
+                            </h2>
+                            <ul>
+                                <li> بازاریابی شبکه‌های اجتماعی
+
+                                </li>
+                                <li> بازاریابی ایمیلی
+
+                                </li>
+                                <li> بازاریابی پیامکی
+
+
+                                </li>
+                                <li> رویدادها
+
+                                </li>
+                                <li> اتوماسیون بازاریابی
+                                </li>
+                                <li> ارزیابی و نظرسنجی
+                                </li>
+                            </ul>
+
+
                         </div>
                     </div>
 
                     <div class="slider">
                         <span>مدیریت</span>
                         <div class="description" style="display:none;">
-                            <h2>Title 1</h2>
-                            <p>Description 1</p>
+                            <h2> مدیریت
+
+                            </h2>
+                            <ul>
+                                <li> کلاس‌ها
+                                </li>
+                                <li> مدیریت اعضا و باشگاه
+                                </li>
+                                <li> کنترل تردد
+                                </li>
+                                <li>مدیریت امور مشتریان
+                                </li>
+                                <li>
+                                    حضور و غیاب
+                                </li>
+                                <li>
+                                    حق عضویت
+                                </li>
+                            </ul>
+
                         </div>
                     </div>
 
 
                     <div class="slider">
                         <span>
-                            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50"><path d="M4 25a4 4 0 0 1 4-4h7v25H4V25Z" fill="#985184"/><path d="M26 8c0-2.21 1.876-4 4.19-4H46v38c0 2.21-1.876 4-4.19 4H26V8Z" fill="#FBB945"/><path d="M15 17.067C15 14.821 16.876 13 19.19 13H35v28.933C35 44.179 33.124 46 30.81 46H15V17.067Z" fill="#FC868B"/><path d="M26 46h4.81c2.314 0 4.19-1.821 4.19-4.067V13h-9v33Z" fill="#F86126"/><path d="m15 46 4.995-.002A4.005 4.005 0 0 0 24 41.995V21h-9v25Z" fill="#962B48"/></svg>
 
                             فروش
                         </span>
                         <div class="description" style="display:none;">
-                            <h2>Title 1</h2>
-                            <p>Description 1</p>
+                            <h2> فروش
+
+                            </h2>
+                            <ul>
+                                <li> مدیریت ارتباط با مشتری (CRM)
+                                </li>
+                                <li> پایانه فروش –فروشگاه
+                                </li>
+                                <li> پایانه فروش –رستوران
+                                </li>
+                                <li>مدیریت امور مشتریان
+                                </li>
+                                <li>
+                                    اجاره
+                                </li>
+                            </ul>
                         </div>
                     </div>
 
@@ -340,9 +531,6 @@ color:
                 </div>
             </div>
         </div>
-        <div>
-            <div id="descriptionContainer"></div>
-        </div>
     </div>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -371,8 +559,3 @@ color:
 </body>
 
 </html>
-
-
-
-
-
