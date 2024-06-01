@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .circle-container {
+          position: relative;
+          width: 330px;
+          height: 330px;
+        }
+        .circle {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border: 25px solid #808181;
+          background-color: #d9d9d9;
+        }
+        .sliders-container {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 100px;
+          height: 100px;
+          animation: spin 75s linear infinite;
+        }
+        @keyframes spin {
+          100% {
+            transform: translate(-50%, -50%) rotate(360deg);
+          }
+        }
+        @keyframes spin2 {
+          from {
+            transform: rotate(360deg);
+          }
+          to {
+            transform: rotate(0deg);
+          }
+        }
+        .slider {
+          position: absolute;
+          width: 100px;
+          height: 100px;
+          border: 2px solid #9b3467;
+          border-radius: 50%;
+          cursor: pointer;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          text-align: center;
+          background-color: #ffffff;
+        }
+        #descriptionContainer h2 {
+          text-align: right;
+          color: #9b3467;
+          font-weight: bold;
+          font-size: 30px;
+        }
+        #descriptionContainer ul {
+          direction: rtl;
+          padding: 0 25px;
+          line-height: 35px;
+          list-style: none;
+          direction: rtl;
+        }
+        #descriptionContainer li {
+          position: relative;
+          font-size: 17px;
+          margin: 10px;
+          text-align: right;
+        }
+        #descriptionContainer li a{
+       text-decoration: none;
+       color: #000000;
+        }
+        #descriptionContainer ul li::before {
+          content: "\2022";
+          color: #9b3467;
+          position: absolute;
+          font-size: 50px;
+          right: -30px;
+          top: -7px;
+        }
+        #brand-img {
+          animation: spin2 75s linear infinite;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 190px;
+          height: 190px;
+          background-color: #f2f2f2;
+          border-radius: 50%;
+          position: absolute;
+          left: -44%;
+          top: -40px;
+        }
+        .flexxx {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+        }
+        @media only screen and (max-width: 650px) {
+          .flexxx {
+            justify-content: center;
+          }
+          .circle {
+            width: 0;
+            height: 0;
+          }
+        }
+        .slider span {
+          animation: spin2 75s linear 0s infinite;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: 100%;
+          align-items: center;
+          justify-content: center;
+          font-size: 20px;
+        }
+        .selected {
+          background-color: #9b3467 !important;
+          color: white;
+        }
+        .slider:nth-child(1) {
+          transform: rotate(0deg) translate(180px) rotate(0deg);
+        }
+        .slider:nth-child(2) {
+          transform: rotate(36deg) translate(180px) rotate(-36deg);
+        }
+        .slider:nth-child(3) {
+          transform: rotate(72deg) translate(180px) rotate(-72deg);
+        }
+        .slider:nth-child(4) {
+          transform: rotate(108deg) translate(180px) rotate(-108deg);
+        }
+        .slider:nth-child(5) {
+          transform: rotate(144deg) translate(180px) rotate(-144deg);
+        }
+        .slider:nth-child(6) {
+          transform: rotate(180deg) translate(180px) rotate(-180deg);
+        }
+        .slider:nth-child(7) {
+          transform: rotate(216deg) translate(180px) rotate(-216deg);
+        }
+        .slider:nth-child(8) {
+          transform: rotate(252deg) translate(180px) rotate(-252deg);
+        }
+        .slider:nth-child(9) {
+          transform: rotate(288deg) translate(180px) rotate(-288deg);
+        }
+        .slider:nth-child(10) {
+          transform: rotate(324deg) translate(180px) rotate(-324deg);
+        }
+        .my-w-50 {
+          width: 50%;
+          display: flex;
+          justify-content: center;
+        }
+        @media screen and (max-width: 778px) {
+          .my-w-50 {
+            width: 100%;
+          }
+          .flexxx {
+            flex-direction: column-reverse;
+          }
+          .mt-50 {
+            margin-top: 100px;
+          }
+          .slider:nth-child(1) {
+            transform: rotate(0deg) translate(130px) rotate(0deg);
+          }
+          .slider:nth-child(2) {
+            transform: rotate(36deg) translate(130px) rotate(-36deg);
+          }
+          .slider:nth-child(3) {
+            transform: rotate(72deg) translate(130px) rotate(-72deg);
+          }
+          .slider:nth-child(4) {
+            transform: rotate(108deg) translate(130px) rotate(-108deg);
+          }
+          .slider:nth-child(5) {
+            transform: rotate(144deg) translate(130px) rotate(-144deg);
+          }
+          .slider:nth-child(6) {
+            transform: rotate(180deg) translate(130px) rotate(-180deg);
+          }
+          .slider:nth-child(7) {
+            transform: rotate(216deg) translate(130px) rotate(-216deg);
+          }
+          .slider:nth-child(8) {
+            transform: rotate(252deg) translate(130px) rotate(-252deg);
+          }
+          .slider:nth-child(9) {
+            transform: rotate(288deg) translate(130px) rotate(-288deg);
+          }
+          .slider:nth-child(10) {
+            transform: rotate(324deg) translate(130px) rotate(-324deg);
+          }
+          #brand-img {
+            width: 180px;
+            height: 180px;
+            left: -38%;
+            top: -38px;
+          }
+          .circle-container {
+          position: static;
+          width: 100%;
+          height: 100%;
+        }
+        #descriptionContainer{
+          margin-top: 120px;
+        }
+        }
+      </style>
+            <div class="flexxx">
+              <div class="my-w-50 mt-50">
+                <div id="descriptionContainer"></div>
+              </div>
+              <div class="my-w-50">
+                <div class="circle-container">
+                  <div class="circle">
+                    <div class="sliders-container">
+                      <div class="slider">
+                        <span>سلامت و درمان</span>
+                        <div class="description" style="display: none">
+                          <h2>سلامت و درمان</h2>
+                          <ul>
+                            <li>
+                              <a href="apps/fitness">برنامه ورزشی</a>
+                            </li>
+                            <li>
+                              <a href="apps/nutrition">برنامه غذایی</a>
+                            </li>
+                            <li>
+                              <a href="apps/body_analysis">آنالیز بدن</a>
+                            </li>
+                            <li>
+                              <a href="apps/consulting">مشاوره ورزشی و پزشکی</a>
+                            </li>
+                            <li>
+                              <a href="apps/pharmacy">داروخانه</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="slider">
+                        <span> بهره‌وری </span>
+                        <div class="description" style="display: none">
+                          <h2>بهره‌وری</h2>
+                          <ul>
+                            <li>
+                              <a href="apps/discussion">بحث</a>
+                            </li>
+                            <li>
+                              <a href="apps/iot">اینترنت اشیاء IoT</a>
+                            </li>
+                            <li>
+                              <a href="apps/licenses">مجوزها</a>
+                            </li>
+                            <li>
+                              <a href="apps/voip">تلفن اینترنتی VoIP</a>
+                            </li>
+                            <li>
+                              <a href="apps/information">اطلاعات</a>
+                            </li>
+                            <li>
+                              <a href="apps/whatsapp">واتس‌اَپ</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="slider">
+                        <span> منابع انسانی </span>
+                        <div class="description" style="display: none">
+                          <h2>منابع انسانی</h2>
+                          <ul>
+                            <li>
+                              <a href="apps/employees">کارمندان</a>
+                            </li>
+                            <li>
+                              <a href="apps/recruitment">استخدام</a>
+                            </li>
+                            <li>
+                              <a href="apps/leave">مرخصی</a>
+                            </li>
+                            <li>
+                              <a href="apps/appraisal">سنجش و ارزیابی</a>
+                            </li>
+                            <li>
+                              <a href="apps/introductions">معرفی‌ها</a>
+                            </li>
+                            <li>
+                              <a href="apps/fleet">ناوگان</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="slider">
+                        <span> امور مالی </span>
+                        <div class="description" style="display: none">
+                          <h2>امور مالی</h2>
+                          <ul>
+                            <li>
+                              <a href="apps/accounting">حسابداری</a>
+                            </li>
+                            <li>
+                              <a href="apps/invoicing">صدور فاکتور</a>
+                            </li>
+                            <li>
+                              <a href="apps/expenses">هزینه‌ها</a>
+                            </li>
+                            <li>
+                              <a href="apps/spreadsheets">صفحه گسترده (هوش تجاری)</a>
+                            </li>
+                            <li>
+                              <a href="apps/documents">اسناد</a>
+                            </li>
+                            <li>
+                              <a href="apps/sign">امضای اسناد</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="slider">
+                        <span>خدمات</span>
+                        <div class="description" style="display: none">
+                          <h2>خدمات</h2>
+                          <ul>
+                            <li>
+                              <a href="apps/project">مدیر پروژه</a>
+                            </li>
+                            <li>
+                              <a href="apps/timesheet">برگه ساعت کارکرد</a>
+                            </li>
+                            <li>
+                              <a href="apps/field_service">خدمت در محل</a>
+                            </li>
+                            <li>
+                              <a href="apps/helpdesk">مرکز پشتیبانی</a>
+                            </li>
+                            <li>
+                              <a href="apps/planning">برنامه‌ریزی</a>
+                            </li>
+                            <li>
+                              <a href="apps/appointments">قرار ملاقات</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="slider">
+                        <span> وبسایت‌ها </span>
+                        <div class="description" style="display: none">
+                          <h2>وبسایت‌ها</h2>
+                          <ul>
+                            <li>
+                              <a href="apps/website_builder">ساخت وبسایت</a>
+                            </li>
+                            <li>
+                              <a href="apps/ecommerce">تجارت الکترونیک</a>
+                            </li>
+                            <li>
+                              <a href="apps/blog">وبلاگ</a>
+                            </li>
+                            <li>
+                              <a href="apps/forum">پرسش و پاسخ</a>
+                            </li>
+                            <li>
+                              <a href="apps/live_chat">گفت‌وگوی آنلاین</a>
+                            </li>
+                            <li>
+                              <a href="apps/elearning">آموزش مجازی</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="slider">
+                        <span> انبار و تولید </span>
+                        <div class="description" style="display: none">
+                          <h2>انبار و تولید</h2>
+                          <ul>
+                            <li>
+                              <a href="apps/inventory">انبار</a>
+                            </li>
+                            <li>
+                              <a href="apps/mrp">تولید MRP</a>
+                            </li>
+                            <li>
+                              <a href="apps/plm">مدیریت چرخه عمر محصول PLM</a>
+                            </li>
+                            <li>
+                              <a href="apps/purchase">خرید</a>
+                            </li>
+                            <li>
+                              <a href="apps/maintenance">تعمیر و نگهداری</a>
+                            </li>
+                            <li>
+                              <a href="apps/quality">کنترل کیفیت</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="slider">
+                        <span>بازاریابی</span>
+                        <div class="description" style="display: none">
+                          <h2>بازاریابی</h2>
+                          <ul>
+                            <li>
+                              <a href="apps/social_media">بازاریابی شبکه‌های اجتماعی</a>
+                            </li>
+                            <li>
+                              <a href="apps/email">بازاریابی ایمیلی</a>
+                            </li>
+                            <li>
+                              <a href="apps/sms">بازاریابی پیامکی</a>
+                            </li>
+                            <li>
+                              <a href="apps/events">رویدادها</a>
+                            </li>
+                            <li>
+                              <a href="apps/automation">اتوماسیون بازاریابی</a>
+                            </li>
+                            <li>
+                              <a href="apps/surveys">نظرسنجی</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="slider">
+                        <span>مدیریت</span>
+                        <div class="description" style="display: none">
+                          <h2>مدیریت</h2>
+                          <ul>
+                            <li>
+                              <a href="apps/classes">کلاس‌ها</a>
+                            </li>
+                            <li>
+                              <a href="apps/membership">مدیریت اعضا و باشگاه</a>
+                            </li>
+                            <li>
+                              <a href="apps/access_control">کنترل تردد</a>
+                            </li>
+                            <li>
+                              <a href="apps/memberships">حق عضویت</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div class="slider">
+                        <span> فروش </span>
+                        <div class="description" style="display: none">
+                          <h2>فروش</h2>
+                          <ul>
+                            <li>
+                              <a href="apps/crm">مدیریت ارتباط با مشتری (CRM)</a>
+                            </li>
+                            <li>
+                              <a href="apps/sales">فروش</a>
+                            </li>
+                            <li>
+                              <a href="apps/pos_shop">پایانه فروش –فروشگاه</a>
+                            </li>
+                            <li>
+                              <a href="apps/pos_restaurant">پایانه فروش –رستوران</a>
+                            </li>
+                            <li>
+                              <a href="apps/customer_management">مدیریت امور مشتریان</a>
+                            </li>
+                            <li>
+                              <a href="apps/rental">اجاره</a>
+                            </li>
+                          </ul>
+                        </div>
+                      </div>
+                      <div id="brand-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="250" height="200" viewBox="0 0 170 53" fill="none">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M156.43 13.267C160.177 13.267 163.566 14.7899 166.022 17.2376C168.477 19.6933 169.992 23.0818 169.992 26.8291C169.992 30.5764 168.469 33.9649 166.022 36.4206C163.566 38.8763 160.177 40.3911 156.43 40.3911C152.683 40.3911 149.294 38.8683 146.839 36.4206C144.383 33.9649 142.868 30.5764 142.868 26.8291C142.868 23.0818 144.391 19.6933 146.839 17.2376C149.294 14.7819 152.683 13.267 156.43 13.267ZM162.139 21.1284C160.68 19.6693 158.663 18.7604 156.43 18.7604C154.198 18.7604 152.181 19.6614 150.721 21.1284C149.262 22.5874 148.354 24.6046 148.354 26.8371C148.354 29.0695 149.254 31.0867 150.721 32.5457C152.181 34.0048 154.198 34.9137 156.43 34.9137C158.663 34.9137 160.68 34.0127 162.139 32.5457C163.598 31.0867 164.507 29.0695 164.507 26.8371C164.507 24.6046 163.606 22.5874 162.139 21.1284Z" fill="#808181"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M127.863 13.267C131.61 13.267 134.998 14.7899 137.454 17.2376C139.91 19.6853 141.425 23.0818 141.425 26.8291C141.425 30.5764 139.902 33.9649 137.454 36.4206C134.998 38.8763 131.61 40.3911 127.863 40.3911C124.115 40.3911 120.727 38.8683 118.271 36.4206C115.815 33.9649 114.301 30.5764 114.301 26.8291C114.301 23.0818 115.823 19.6933 118.271 17.2376C120.727 14.7819 124.115 13.267 127.863 13.267ZM133.571 21.1284C132.112 19.6693 130.095 18.7604 127.863 18.7604C125.63 18.7604 123.613 19.6614 122.154 21.1284C120.695 22.5874 119.786 24.6046 119.786 26.8371C119.786 29.0695 120.687 31.0867 122.154 32.5457C123.613 34.0048 125.63 34.9137 127.863 34.9137C130.095 34.9137 132.112 34.0127 133.571 32.5457C135.03 31.0867 135.939 29.0695 135.939 26.8371C135.939 24.6046 135.038 22.5874 133.571 21.1284Z" fill="#808181"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M99.2955 13.267C102.309 13.267 105.1 14.2477 107.348 15.9141V6.75311H112.865V26.6616V26.8371C112.865 30.5844 111.351 33.9729 108.895 36.4286C106.439 38.8842 103.051 40.3991 99.3034 40.3991C95.5561 40.3991 92.1676 38.8763 89.7119 36.4286C87.2563 33.9729 85.7414 30.5844 85.7414 26.8371C85.7414 23.0898 87.2642 19.7012 89.7119 17.2456C92.1676 14.7899 95.5561 13.275 99.3034 13.275L99.2955 13.267ZM107.364 26.6616H107.348V26.271C107.213 24.2698 106.336 22.4679 105.004 21.1284C103.545 19.6693 101.528 18.7604 99.2955 18.7604C97.063 18.7604 95.0459 19.6614 93.5868 21.1284C92.1278 22.5875 91.2188 24.6046 91.2188 26.8371C91.2188 29.0695 92.1198 31.0867 93.5868 32.5457C95.0459 34.0048 97.063 34.9137 99.2955 34.9137C101.528 34.9137 103.545 34.0127 105.004 32.5457C106.463 31.0787 107.372 29.0695 107.372 26.8371C107.372 26.7812 107.372 26.7175 107.372 26.6616H107.364Z" fill="#808181"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M13.57 13.267C17.3173 13.267 20.7058 14.7899 23.1615 17.2376C25.6172 19.6933 27.1321 23.0818 27.1321 26.8291C27.1321 30.5764 25.6092 33.9649 23.1615 36.4206C20.7058 38.8763 17.3173 40.3911 13.57 40.3911C9.82271 40.3911 6.43419 38.8683 3.97851 36.4206C1.52283 33.9649 0.00796509 30.5764 0.00796509 26.8291C0.00796509 23.0818 1.52283 19.6933 3.97851 17.2376C6.43419 14.7819 9.82271 13.267 13.57 13.267ZM19.2787 21.1284C17.8196 19.6693 15.8024 18.7604 13.57 18.7604C11.3376 18.7604 9.32041 19.6614 7.86135 21.1284C6.4023 22.5874 5.49338 24.6046 5.49338 26.8371C5.49338 29.0695 6.39433 31.0867 7.86135 32.5457C9.32041 34.0048 11.3376 34.9137 13.57 34.9137C15.8024 34.9137 17.8196 34.0127 19.2787 32.5457C20.7377 31.0867 21.6466 29.0695 21.6466 26.8371C21.6466 24.6046 20.7457 22.5874 19.2787 21.1284Z" fill="#808181"></path>
+                          <path d="M45.8766 3.6516C46.4985 3.79512 47.0566 4.12201 47.4871 4.58444C48.0612 5.20634 48.3641 6.01958 48.3322 6.86472C48.3004 7.70985 47.9416 8.49918 47.3197 9.07324C46.5463 9.7908 45.4699 10.0778 44.4414 9.83864C43.8195 9.69513 43.2614 9.36824 42.8309 8.9058C42.2568 8.28391 41.9539 7.47066 41.9857 6.62553C42.0176 5.78039 42.3764 4.99107 42.9983 4.41701C43.7717 3.69944 44.848 3.41241 45.8766 3.6516ZM46.6739 0.167407C44.569 -0.318945 42.2728 0.215245 40.5666 1.7939C37.8318 4.32931 37.6644 8.59486 40.1998 11.3296C41.1566 12.3581 42.3605 13.0278 43.6362 13.3228C45.741 13.8092 48.0372 13.275 49.7435 11.6963C52.4782 9.16094 52.6456 4.89539 50.1102 2.16065C49.1535 1.13214 47.9495 0.462408 46.6739 0.167407Z" fill="#9B3467"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M41.5712 17.0701C39.7374 14.1201 36.7794 11.8717 33.1278 11.0266L31.884 16.3765C34.0526 16.8788 35.8147 18.2182 36.907 19.9723C37.9993 21.7264 38.4218 23.895 37.9116 26.0716C37.4093 28.2403 36.0698 30.0023 34.3157 31.0946C32.5617 32.1869 30.393 32.6095 28.2164 32.0992L26.9726 37.4491C30.6243 38.3022 34.2679 37.5846 37.2179 35.7508C40.1679 33.917 42.4163 30.9591 43.2614 27.3074C44.1146 23.6558 43.397 20.0122 41.5632 17.0622L41.5712 17.0701Z" fill="#808181"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M43.9152 17.6203C46.8652 15.7865 50.5089 15.0769 54.1605 15.9221L52.9167 21.2719C50.7481 20.7696 48.5715 21.1922 46.8174 22.2845C45.0633 23.3768 43.7239 25.1388 43.2216 27.3075C42.7193 29.4761 43.1419 31.6528 44.2262 33.4068C45.3185 35.1609 47.0805 36.5004 49.2492 37.0026L48.0054 42.3525C44.3537 41.4994 41.3958 39.251 39.562 36.309C37.7282 33.359 37.0186 29.7153 37.8637 26.0637C38.7168 22.4121 40.9652 19.4541 43.9073 17.6203H43.9152Z" fill="#808181"></path>
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M84.2586 27.9692V13.267H78.7492L78.813 26.9088C78.813 29.1333 77.9121 31.1504 76.453 32.6015C74.994 34.0606 72.9768 34.9615 70.7444 34.9615C68.5119 34.9615 66.4948 34.0606 65.0357 32.6015C65.0198 32.5856 65.0118 32.5776 64.9958 32.5617C63.6245 31.1903 62.7475 29.3326 62.6438 27.2676V26.4703C62.6438 26.4145 62.6438 26.3587 62.6518 26.3029H62.6438L62.6837 16.0576V13.267H57.1823V26.3108H57.1983C57.1903 26.5102 57.1823 26.7175 57.1823 26.9168C57.1823 30.6561 58.6972 34.0367 61.1529 36.4844C61.2246 36.5561 61.2884 36.6199 61.3602 36.6837C63.7919 38.9879 67.0768 40.4071 70.6965 40.4071C73.7103 40.4071 76.4929 39.4264 78.7492 37.768V37.8318C78.7492 37.8318 78.7572 37.8318 78.7652 37.8238L78.805 40.2795C78.534 41.9937 77.7048 43.5245 76.5327 44.6965C75.0737 46.1556 73.0645 47.0565 70.84 47.0565C68.6156 47.0565 66.5984 46.1556 65.1473 44.6965C65.1314 44.6806 65.1234 44.6726 65.1075 44.6567C63.9434 43.4926 63.1381 41.9778 62.8591 40.2795H57.3737C57.6766 43.5086 59.1118 46.4028 61.2804 48.5714C61.3522 48.6432 61.416 48.7069 61.4877 48.7707C63.9115 51.0749 67.1964 52.4941 70.8081 52.4941C73.814 52.4941 76.5965 51.5134 78.8449 49.8551V49.9188C79.403 49.5122 79.9292 49.0578 80.4236 48.5714C82.5922 46.4028 84.0194 43.5086 84.3223 40.2795L84.2825 31.3099V27.9692H84.2586Z" fill="#808181"></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <script>
+        document.addEventListener("DOMContentLoaded", function () {
+          const sliders = document.querySelectorAll(".slider");
+          const descriptionContainer = document.getElementById(
+            "descriptionContainer"
+          );
+          // Select the first slider by default
+          sliders[0].classList.add("selected");
+          const defaultDesc = sliders[0].querySelector(".description").innerHTML;
+          descriptionContainer.innerHTML = defaultDesc;
+          sliders.forEach((slider) => {
+            slider.addEventListener("click", function () {
+              sliders.forEach((slider) => {
+                slider.classList.remove("selected");
+              });
+              this.classList.add("selected");
+              const desc = this.querySelector(".description").innerHTML;
+              descriptionContainer.innerHTML = desc;
+            });
+          });
+        });
+      </script>
+</body>
+</html>
